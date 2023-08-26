@@ -3,6 +3,14 @@ import ReactMarkdown from "react-markdown"
 import { getAllBlogs, getSingleBlog } from "../../utils/mdQueries"
 import PrevNext from "../../components/prevNext"
 
+export async function generateMetadata(props) {
+  const { singleDocument } = await getSingleBlog(props)
+  return {
+    title: singleDocument.data.title,
+    description: singleDocument.data.excerpt,
+  }
+}
+
 const SingleBlog = async (props) => {
   const { singleDocument } = await getSingleBlog(props)
   const { blogs } = await getAllBlogs()

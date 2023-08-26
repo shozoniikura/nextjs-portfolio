@@ -1,3 +1,8 @@
+export const metadata = {
+  title: 'コンタクト',
+  description: "これはコンタクトページです",
+}
+
 const Contact = () => {
   return (
     <>
